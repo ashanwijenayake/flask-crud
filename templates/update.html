@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Update Repository</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <script src="{{ url_for('static', filename='js/jquery-3.5.1.js') }}"></script>
+
+        <style>
+            .mb-10{
+                margin-bottom: 10px;
+            }
+            .pt-10{
+                padding-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container pt-10">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <h3 class="display-5"> Update Repository </h3>
+                    <form action="/update/{{row[0][0]}}" method="POST" class="pt-10">                       
+                        <input type="hidden" class="form-control" name="id" value="{{row[0][0]}}">
+                        <div class="row mb-10">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Album </label>
+                                    <input type="text" class="form-control" name="album" required value="{{row[0][1]}}">
+                                </div>          
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Song Title </label>
+                                    <input type="text" class="form-control" name="title" required value="{{row[0][2]}}">
+                                </div>
+                            </div>           
+                        </div>                         
+                        <div class="row mb-10">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Main Singer </label>
+                                    <input type="text" class="form-control" name="singer" required value="{{row[0][3]}}">
+                                </div>
+                            </div>    
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Lyricist </label>
+                                    <input type="text" class="form-control" name="lyrics" required value="{{row[0][4]}}">
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row mb-10">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Music Composer </label>
+                                    <input type="text" class="form-control" name="music" required value="{{row[0][5]}}">
+                                </div>
+                            </div>    
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Publisher </label>
+                                    <input type="text" class="form-control" name="publisher" required value="{{row[0][6]}}">
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row mb-10">
+                            <div class="col-sm-6"> 
+                                <div class="form-group">
+                                    <label class="lead"> Feature Singer </label>
+                                    <input type="text" class="form-control" name="singer_2" value="{{row[0][7]}}">
+                                </div>
+                            </div>    
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Custom 1 </label>
+                                    <input type="text" class="form-control" name="custom_1" value="{{row[0][8]}}">
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row mb-10">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Custom 2 </label>
+                                    <input type="text" class="form-control" name="custom_2" value="{{row[0][9]}}">
+                                </div>
+                            </div>    
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="lead"> Year </label>
+                                    <input type="number" class="form-control" name="year" value="{{row[0][10]}}">
+                                </div>
+                            </div>                            
+                        </div>        
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Save">
+                            <a href="/" class="btn btn-secondary"> Back </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
